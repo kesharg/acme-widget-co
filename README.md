@@ -39,6 +39,8 @@
 
     ```bash
     docker-compose up --build
+    docker-compose up -d
+
     ```
 
     Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
