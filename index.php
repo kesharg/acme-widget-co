@@ -31,7 +31,8 @@ $productCombinations = [
     ["B01", "G01"],
     ["R01", "R01"],
     ["R01", "G01"],
-    ["B01", "B01", "R01", "R01", "R01"]
+    ["B01", "B01", "R01", "R01", "R01"],
+    ["R01", "R01", "R01", "R01", "B01", "R01", "G01", "R01"]
 ];
 
 // HTML for displaying basket totals in a table

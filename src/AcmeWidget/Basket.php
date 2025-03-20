@@ -38,14 +38,21 @@ class Basket
     {
         // Calculate the total price of products
         $total = array_reduce($this->products, fn($sum, $product) => $sum + $product->getPrice(), 0);
+    
+        // If there are no products, return 0
+        if ($total === 0) {
+            return 0;
+        }
+    
         // Apply offer discount
         $offerDiscount = $this->offerStrategy->applyOffer($this->products);
-
+    
         // Calculate delivery cost based on the discounted total
         $deliveryCost = $this->deliveryStrategy->calculate($total - $offerDiscount);
-
+    
         // Calculate the final total and round to 2 decimal places
         $finalTotal = ($total - $offerDiscount) + $deliveryCost;
         return floor($finalTotal * 100) / 100;
     }
+    
 }
