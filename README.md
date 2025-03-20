@@ -35,63 +35,61 @@
 
 2. Install dependencies via Composer:
 
-### With Docker:
+    ### With Docker:
 
     ```bash
     docker-compose up --build
     ```
 
-Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
+    Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
 
-### Without Docker (locally)
+    ### Without Docker (locally)
 
     ```bash
     composer install
 
-    php -S localhost:8000
+    php -S localhost:8080
 
-```
+    ```
+    Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
 
-
-## Running Tests
 
 3. To run the PHPUnit specific BasketTest test
 
-### With Docker:
+      ### With Docker:
 
-```bash
-docker-compose exec php ./vendor/bin/phpunit tests/BasketTest.php
+      ```bash
+      docker-compose exec php ./vendor/bin/phpunit tests/BasketTest.php
 
-````
+      ```
 
-Or
+      Or
 
-```bash
-docker exec -it php-container ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/BasketTest.php
+      ```bash
+      docker exec -it php-container ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/BasketTest.php
 
-```
+      ```
 
-### Without Docker(locally):
+      ### Without Docker(locally):
 
-```bash
-php ./vendor/bin/phpunit tests/BasketTest.php
-```
+      ```bash
+      php ./vendor/bin/phpunit tests/BasketTest.php
+      
+      ```
 
 4. Run PHPStan static analysis:
 
-### With Docker
+      ### With Docker
 
-```bash
-docker-compose exec php ./vendor/bin/phpstan analyse
+      ```bash
+      docker-compose exec php ./vendor/bin/phpstan analyse
+      ```
 
-```
+      ### Without Docker (locally):
 
-### Without Docker (locally):
-
-```bash
-php ./vendor/bin/phpstan analyse
-
-```
+      ```bash
+      php ./vendor/bin/phpstan analyse
+      ```
 ## Example Baskets:
 Example 1: Basket with Blue and Green Widgets
 Products: B01, G01
@@ -141,4 +139,4 @@ Feel free to fork the repository and submit pull requests. Contributions are wel
 
 ## License:
 This project is licensed under the MIT License.
-```
+
