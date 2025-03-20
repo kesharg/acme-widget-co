@@ -1,0 +1,11 @@
+{
+    "autoload": {
+      "psr-4": {
+        "AcmeWidget\\": "src/AcmeWidget/"
+      }
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^10.5",
+      "phpstan/phpstan": "^1.0"
+    }
+  }
