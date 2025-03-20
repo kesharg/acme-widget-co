@@ -1,14 +1,15 @@
 # Acme Widget Basket System
 
 ## Features
-- **Product Catalog**: Contains Red, Green, and Blue widgets.
-Here are the available products:
 
-| **Product Name**  | **Product Code** | **Price** |
-|-------------------|------------------|-----------|
-| Red Widget        | R01              | $32.95    |
-| Green Widget      | G01              | $24.95    |
-| Blue Widget       | B01              | $7.95     |
+- **Product Catalog**: Contains Red, Green, and Blue widgets.
+  Here are the available products:
+
+| **Product Name** | **Product Code** | **Price** |
+| ---------------- | ---------------- | --------- |
+| Red Widget       | R01              | $32.95    |
+| Green Widget     | G01              | $24.95    |
+| Blue Widget      | B01              | $7.95     |
 
 - **Delivery Charges** based on total amount:
   - Orders < $50: $4.95 delivery fee.
@@ -27,40 +28,70 @@ Here are the available products:
 
 1. Clone this repository:
 
-    ```bash
-    git clone https://github.com/kesharg/acme-widget-co.git
-    cd acme-widget-co
-    ```
+   ```bash
+   git clone https://github.com/kesharg/acme-widget-co.git
+   cd acme-widget-co
+   ```
 
-2. Build and start the Docker containers:
+2. Install dependencies via Composer:
+
+### With Docker:
 
     ```bash
     docker-compose up --build
     ```
 
-3. Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
+Make sure the application is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
+
+### Without Docker (locally)
+
+    ```bash
+    composer install
+
+    php -S localhost:8000
+
+```
+
 
 ## Running Tests
 
-4. To run the PHPUnit specific BasketTest test
+3. To run the PHPUnit specific BasketTest test
+
+### With Docker:
 
 ```bash
 docker-compose exec php ./vendor/bin/phpunit tests/BasketTest.php
 
-```
-Or 
+````
 
-```
+Or
+
+```bash
 docker exec -it php-container ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/BasketTest.php
 
 ```
-## Run PHPStan static analysis:
+
+### Without Docker(locally):
+
+```bash
+php ./vendor/bin/phpunit tests/BasketTest.php
 ```
+
+4. Run PHPStan static analysis:
+
+### With Docker
+
+```bash
 docker-compose exec php ./vendor/bin/phpstan analyse
 
 ```
 
+### Without Docker (locally):
 
+```bash
+php ./vendor/bin/phpstan analyse
+
+```
 ## Example Baskets:
 Example 1: Basket with Blue and Green Widgets
 Products: B01, G01
@@ -110,3 +141,4 @@ Feel free to fork the repository and submit pull requests. Contributions are wel
 
 ## License:
 This project is licensed under the MIT License.
+```
